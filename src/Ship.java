@@ -12,15 +12,13 @@ public class Ship {
         private int totalLives;
         private int[] direction;
 
-        public Ship(int length, String name, String coordinates, int[] direction){
+        public Ship(int length, String name, String coordinates, String direction){
             this.length = length;
             this.name = name;
             this.location = new int[2];
 
-            int x = (int) (coordinates.charAt(0) - 'A');
-            int y = (int) (coordinates.charAt(1));
-            this.location[0] = x;
-            this.location[1] = y;
+            this.location[0] = (int) (coordinates.charAt(0) - 'A');
+            this.location[1] = (int) (coordinates.charAt(1));
             this.lives = new int[length];
 
             for(int i = 0; i < this.length; i++){
@@ -29,9 +27,9 @@ public class Ship {
 
             this.totalLives = length;
 
-            for(int j = 0; j < 2; j++){
-                this.direction[j] = direction[j];
-            }
+            this.direction[0] = (int) (direction.charAt(0));
+            this.direction[1] = (int) (direction.charAt(1));
+
         }
 
         public int checkHit(String coordinates){
@@ -54,5 +52,9 @@ public class Ship {
                 coords[1] = (int) (coordinates.charAt(1));
 
                 return coords;
+        }
+
+        public String getName(){
+            return this.name;
         }
 }
