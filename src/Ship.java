@@ -29,12 +29,30 @@ public class Ship {
 
             this.totalLives = length;
 
-            for(int j = 0; j < 2; j++){ {
+            for(int j = 0; j < 2; j++){
                 this.direction[j] = direction[j];
             }
         }
 
-        public static int checkHit(int x, int y){
+        public int checkHit(String coordinates){
+            int[] coords = convertCoords(coordinates);
 
+            for(int i = 0; i < this.length; i++)
+                if(this.location[0] + i * direction[0] == coords[0] && this.location[1] + i * direction[1] == coords[1]) {
+                    this.lives[i] = 0;
+                    this.totalLives--;
+                    return 1;
+                }
+
+            return 0;
+        }
+
+        private int[] convertCoords(String coordinates){
+                int[] coords = new int[2];
+
+                coords[0] = (int) (coordinates.charAt(0) - 'A');
+                coords[1] = (int) (coordinates.charAt(1));
+
+                return coords;
         }
 }
