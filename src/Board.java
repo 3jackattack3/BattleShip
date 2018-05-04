@@ -1,5 +1,5 @@
 /*
-    Jack Defay
+    Jack Defay & Yuval Amitay
     Board.java
     5/3/2018
 */
@@ -19,12 +19,12 @@ public class Board {
         Scanner in = null;
         String[] temp;
 
-        //this.fileName = filename;
+        this.fileName = filename;
 
         this.ships = new ArrayList<Ship>(1);
 
         try{
-            in = new Scanner(new File(filename));
+            in = new Scanner(new File(this.fileName));
         }
         catch (FileNotFoundException e){
             System.out.println("Could not read file!");
@@ -32,7 +32,7 @@ public class Board {
 
         while(in.hasNextLine()){
             temp = in.nextLine().split("/", -2);
-            ships.add(new Ship(Integer.parseInt(temp[0]), temp[1], temp[2], temp[3]));
+            this.ships.add(new Ship(Integer.parseInt(temp[0]), temp[1], temp[2], temp[3]));
         }
     }
 

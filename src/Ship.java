@@ -12,7 +12,7 @@ public class Ship {
         private int totalLives;
         private int[] direction;
 
-        public Ship(int length, String name, String coordinates, String direction){
+        public Ship(int length, String name, String coordinates, String directionString){
             this.length = length;
             this.name = name;
             this.location = new int[2];
@@ -27,8 +27,10 @@ public class Ship {
 
             this.totalLives = length;
 
-            this.direction[0] = (int) (direction.charAt(0));
-            this.direction[1] = (int) (direction.charAt(1));
+            this.direction = new int[2];
+
+            this.direction[0] = Integer.parseInt(directionString.substring(0,1));
+            this.direction[1] = Integer.parseInt(directionString.substring(1));
 
         }
 
