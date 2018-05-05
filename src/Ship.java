@@ -1,7 +1,7 @@
 /*
-    Jack Defay
+    Jack Defay and Yuval Amitay
     Ship.java
-    5/2/2018
+    5/4/2018
 */
 
 public class Ship {

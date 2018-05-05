@@ -1,7 +1,7 @@
 /*
-    Jack Defay
+    Jack Defay and Yuval Amitay
     Main.java
-    5/3/2018
+    5/4/2018
 */
 
 public class Main {

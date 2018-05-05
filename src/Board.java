@@ -1,7 +1,7 @@
 /*
-    Jack Defay & Yuval Amitay
+    Jack Defay and Yuval Amitay
     Board.java
-    5/3/2018
+    5/4/2018
 */
 
 import java.io.File;
