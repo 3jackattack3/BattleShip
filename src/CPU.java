@@ -23,6 +23,10 @@ public class CPU {
         if(numDestroyedShips == numShipsOnBoard){
             return randomSelection();
         }
+
+        else{
+            return selectNextToShip(userBoard);
+        }
     }
 
     public int numShipsOnBoard(Board userBoard){
@@ -34,10 +38,14 @@ public class CPU {
     }
 
     private String randomSelection(){
-        return convertCoordinates(new int[]{0,0}); //return a random coordinate in the form {capital letter,number}
+        return convertCoordinates(new int[] {0,0}); //return a random coordinate in the form {capital letter,number}
     }
 
     private String convertCoordinates(int[] intCoordinates){
         return " "; //reads in two integer coordinates and converts to the form {capital letter, number}
+    }
+
+    private String selectNextToShip(Board userBoard){
+        return convertCoordinates(new int[] {0,0});  //searches the board for likely incomplete ships, then selects a space in line that is most likely to hit
     }
 }
