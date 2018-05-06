@@ -4,6 +4,8 @@
     5/6/2018
 */
 
+import java.util.Random;
+
 public class CPU {
 
     private Board computerBoard;
@@ -29,7 +31,7 @@ public class CPU {
         }
     }
 
-    public int numShipsOnBoard(Board userBoard){
+    public int numShipsOnBoard(Board userBoard){  //what syntax are we gonna use for the board? periods and x's? 0's and 1's?
         int numShipsOnBoard = 0;
 
         //searches board for number of ships
@@ -38,11 +40,21 @@ public class CPU {
     }
 
     private String randomSelection(){
-        return convertCoordinates(new int[] {0,0}); //return a random coordinate in the form {capital letter,number}
+        Random rand = new Random();
+
+        int[] intCoords = {rand.nextInt(this.computerBoard.size()), rand.nextInt(this.computerBoard.size())};
+
+        return convertCoordinates(intCoords); //return a random coordinate in the form {capital letter,number}
     }
 
     private String convertCoordinates(int[] intCoordinates){
-        return " "; //reads in two integer coordinates and converts to the form {capital letter, number}
+        int firstCoord = intCoordinates[0] + 'A';
+
+        char firstCoordChar = (char) firstCoord;
+
+        String stringCoords = firstCoordChar + Integer.toString(intCoordinates[1]);
+
+        return stringCoords; //reads in two integer coordinates and converts to the form {capital letter, number}
     }
 
     private String selectNextToShip(Board userBoard){

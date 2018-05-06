@@ -39,4 +39,8 @@ public class Board {
     public String getShipName(int index){
         return ships.get(index).getName();
     }
+
+    public int size(){
+        return this.ships.size();
+    }
 }
