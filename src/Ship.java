@@ -34,17 +34,17 @@ public class Ship {
 
         }
 
-        public int checkHit(String coordinates){
+        public boolean checkHit(String coordinates){
             int[] coords = convertCoords(coordinates);
 
             for(int i = 0; i < this.length; i++)
                 if(this.location[0] + i * direction[0] == coords[0] && this.location[1] + i * direction[1] == coords[1]) {
                     this.lives[i] = 0;
                     this.totalLives--;
-                    return 1;
+                    return true;
                 }
 
-            return 0;
+            return false;
         }
 
         private int[] convertCoords(String coordinates){
@@ -58,5 +58,14 @@ public class Ship {
 
         public String getName(){
             return this.name;
+        }
+
+        public boolean destroyed(){
+            int livesLeft = this.length;
+            for(int i = 0; i < this.length; i++){
+                if(this.lives[i] == 0) livesLeft--;
+            }
+            if(livesLeft == 0) return true;
+            else return false;
         }
 }

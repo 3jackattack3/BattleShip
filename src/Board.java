@@ -43,4 +43,23 @@ public class Board {
     public int size(){
         return this.ships.size();
     }
+
+    public boolean checkHit(String location){
+        for(Ship ship : ships){
+            if(ship.checkHit(location)) return true;
+        }
+
+        return false;
+    }
+
+    public int numDestroyed(){
+
+        int numDestroyed = 0;
+
+        for(Ship ship : ships){
+            if(ship.destroyed()) numDestroyed++;
+        }
+
+        return numDestroyed;
+    }
 }

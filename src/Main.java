@@ -16,10 +16,15 @@ public class Main {
         //modifies the file accordingly
         //cpu randomly places ships
 
-        //while(choice > -1){
+        Board userBoard = new Board("userShips");
+        Board computerBoard = new Board("computerShips");
+
+        String location = "";
+
+        while(choice > -1){
             //asks user for target location
-            //computerBoard.checkHit
-            //tells the user if it hit or not
+            if(computerBoard.checkHit(location)) System.out.println("Hit!");
+            else System.out.println("Miss!");
             //displays in gui
             //checks if any ships have been destroyed and updates score
             //checks if anyone has won
@@ -30,6 +35,6 @@ public class Main {
             //display in gui?
             //checks if any ships have been destroyed and updates scores
             //checks if anyone has won
-        //}
+        }
     }
 }

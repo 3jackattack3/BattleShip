@@ -22,7 +22,7 @@ public class CPU {
     public String pickTarget(Board userBoard, int numDestroyedShips){
         int numShipsOnBoard = numShipsOnBoard(userBoard);
 
-        if(numDestroyedShips == numShipsOnBoard){
+        if(numDestroyedShips == userBoard.size() - numShipsOnBoard){  //changed this without thinking is it right?
             return randomSelection();
         }
 
