@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class CPU {
 
-    private Board computerBoard;
+    private Board computerBoard;  //this might be an issue cuz this isn't currently updated as the computer board takes hits from the player
 
     private int[] listOfShipLengths;
 
