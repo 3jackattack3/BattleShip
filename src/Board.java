@@ -15,11 +15,15 @@ public class Board {
 
     private String fileName;
 
-    public Board(String filename){
+    private int boardSize;  //assuming its a square for now
+
+    public Board(String filename, int boardSize){
         Scanner in = null;
         String[] temp;
 
         this.fileName = filename;
+
+        this.boardSize = boardSize;
 
         this.ships = new ArrayList<Ship>(1);
 
@@ -61,5 +65,9 @@ public class Board {
         }
 
         return numDestroyed;
+    }
+
+    public int getSizeOfBoard(){
+        return this.boardSize;
     }
 }

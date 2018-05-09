@@ -14,9 +14,9 @@ public class CPU {
 
     //private int difficulty;
 
-    public CPU(Board computerBoard, int[] listOfShipLengths){
+    public CPU(Board computerBoard){
         this.computerBoard = computerBoard;
-        this.listOfShipLengths = listOfShipLengths;
+        //this.listOfShipLengths = listOfShipLengths;  //should prob write a method to do this...
     }
 
     public String pickTarget(Board userBoard, int numDestroyedShips){
@@ -32,17 +32,13 @@ public class CPU {
     }
 
     public int numShipsOnBoard(Board userBoard){  //what syntax are we gonna use for the board? periods and x's? 0's and 1's?
-        int numShipsOnBoard = 0;
-
-        //searches board for number of ships
-
-        return numShipsOnBoard;
+        return userBoard.size();
     }
 
     private String randomSelection(){
         Random rand = new Random();
 
-        int[] intCoords = {rand.nextInt(this.computerBoard.size()), rand.nextInt(this.computerBoard.size())};
+        int[] intCoords = {rand.nextInt(this.computerBoard.getSizeOfBoard()), rand.nextInt(this.computerBoard.getSizeOfBoard())+1};
 
         return convertCoordinates(intCoords); //return a random coordinate in the form {capital letter,number}
     }
