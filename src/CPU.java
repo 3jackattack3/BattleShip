@@ -54,6 +54,14 @@ public class CPU {
     }
 
     private String selectNextToShip(Board userBoard){
+        //loops through horizontally, then vertically
+        //if it finds a line of hits, assumes thats a ship
+        //if it finds a single, then checks the spaces just above and just below the space to see if its a single or a line
+        //if its a single, pick a random direction, or we could prioritize the direction further away from the wall
+        //if it has a direction then pick randomly between the two possible directions
+        //of course if there is a space next to a wall, then ignore it
+        //can also add modifiers for the types of ships. It could keep track of the different types of ships to figure out which ones are destroyed already
+
         return convertCoordinates(new int[] {0,0});  //searches the board for likely incomplete ships, then selects a space in line that is most likely to hit
     }
 }
